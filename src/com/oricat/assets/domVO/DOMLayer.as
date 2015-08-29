@@ -20,6 +20,10 @@ public class DOMLayer implements ISetXML{
 	public var autoNamed:String;
 
 	public function get DOMFrames():Vector.<DOMFrame> {
+        if(_DOMFrames == null)
+        {
+            _DOMFrames = new <DOMFrame>[];
+        }
 		return _DOMFrames;
 	}
 

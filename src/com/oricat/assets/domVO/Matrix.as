@@ -37,14 +37,23 @@ public class Matrix implements ISetXML{
 		if(value.@ty)ty = value.@ty;
 	}
 
-	public function getMatrix():flash.geom.Matrix {
-		return new flash.geom.Matrix(	a?Number(a):1,
-				b?Number(b):0,
-				c?Number(c):0,
-				d?Number(d):1,
-				tx?Number(tx)/20:0,
-				ty?Number(ty)/20:0);
-	}
+    public function getInstanceMatrix():flash.geom.Matrix {
+        return new flash.geom.Matrix(	a?Number(a):1,
+                b?Number(b):0,
+                c?Number(c):0,
+                d?Number(d):1,
+                tx?Number(tx):0,
+                ty?Number(ty):0);
+    }
+
+    public function getMatrix():flash.geom.Matrix {
+        return new flash.geom.Matrix(	a?Number(a):1,
+                b?Number(b):0,
+                c?Number(c):0,
+                d?Number(d):1,
+                tx?Number(tx)/20:0,
+                ty?Number(ty)/20:0);
+    }
 
 	public function setMatrix(value:flash.geom.Matrix) {
 		a=String(value.a);

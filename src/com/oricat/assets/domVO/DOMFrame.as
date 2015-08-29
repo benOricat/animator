@@ -54,24 +54,26 @@ public class DOMFrame implements ISetXML{
 		if(value.@labelType) labelType = value.@labelType;
 		if(value.@keyMode  ) keyMode   = value.@keyMode  ;
 
-		var xmlList:XMLList = value.children()[0].children();
+		var xmlList:XMLList = value.elements.children();
 		var element:ISetXML;
 		for (var i:int = 0; i < xmlList.length(); i++) {
 			var item:XML = xmlList[i];
 			switch(item.name().localName){
 				case "DOMShape":
 					element = new DOMShape();
+                    element.xml = item;
 					break;
 				case "DOMBitmapInstance":
 					element = new DOMBitmapInstance();
+                    element.xml = item;
 					break;
 				case "DOMSymbolInstance":
 					element = new DOMSymbolInstance();
+                    element.xml = item;
 					break;
 			}
             if(element)
             {
-                element.xml = item;
                 elements.push(element);
             }
 		}

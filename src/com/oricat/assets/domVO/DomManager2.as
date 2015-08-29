@@ -35,7 +35,7 @@ public class DomManager2{
 
 //		generateScreens();
 //		generateContent();
-		generateMedia();
+//		generateMedia();
 	}
 
 	private function generateScreens():void {
@@ -94,7 +94,6 @@ public class DomManager2{
 			mediaNode = media[i];
 			mediaVO = new MediaVO();
 			mediaVO.setXml(mediaNode,_ns);
-			DOMBitmapItem
 			_domBitmapItems.push(mediaVO);
 		}
 	}

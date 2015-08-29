@@ -25,7 +25,7 @@ import scraps.Scrap;
 public class Main extends Sprite {
 
     private var dragTarget:Sprite = new Sprite();
-    private const backgroundColor:Number = 0xf0f0f0;
+    private const backgroundColor:Number = 0xffffff;
     private var _multiFileStream:IMultiFileStream;
 
     public function Main():void {
@@ -134,7 +134,8 @@ public class Main extends Sprite {
         interpreter.domManager = assetExtractor.domManager;
         interpreter.symbols = assetExtractor.symbols;
 
-        interpreter.renderSymbols();
+        interpreter.renderStage();
+//        interpreter.renderSymbols();
         addChild(interpreter.display as DisplayObject);
 //       trace(_multiFileStream.save());
     }

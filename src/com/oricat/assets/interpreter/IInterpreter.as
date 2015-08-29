@@ -9,6 +9,7 @@ public interface IInterpreter {
 
     function set domManager(domManager:DomManager2):void;
     function set symbols(value:Vector.<DOMSymbolItem>):void;
+    function renderStage():void;
     function renderSymbols():void;
 
     function get initialised():Boolean;
